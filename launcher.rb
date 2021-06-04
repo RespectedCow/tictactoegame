@@ -1,8 +1,8 @@
 # Program made by RespectedCow on github
 
 #imports
-require_relative('/app/scripts/controllers/game_controller.rb')
-require_relative('/app/scripts/controllers/game_controller.rb')
+require_relative('app/scripts/controllers/game_controller.rb')
+require_relative('app/scripts/controllers/bot_controller.rb')
 
 #variables
 player_turn_place = "X"
@@ -10,13 +10,13 @@ bot_turn_place = "O"
 
 #functions
 def ask_player_restart
-    puts "Do you wanna exit the file or restart?(y/n)"
+    puts "Do you wanna exit the file or restart?(y for exit/n for restart)"
     player_input = gets.chomp
 
     if player_input == "y"
-        game_start()
-    elsif player_input == "n"
         exit
+    elsif player_input == "n"
+        game_start()
     else
         exit
     end
@@ -33,10 +33,7 @@ def game_start
     game_moves = 0
 
     #main
-    id = ask_player_for_input(game_position)
-    if id.nil?
-        ask_player_restart()
-    end
+    bot_move(game_moves, game_position)
 end
 
 game_start()

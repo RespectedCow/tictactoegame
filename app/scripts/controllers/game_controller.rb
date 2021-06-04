@@ -1,13 +1,37 @@
 #imports
-require_relative('.config/launcher.rb')
+require_relative 'bot_controller.rb'
 
 # THIS FILE WILL CONTAIN GAME STARTER FUNCTIONS
 def display_game_status(game_display_data)
-    puts "#{game_display_data[1]} |" +  " #{game_display_data[2]} |" +  " #{game_display_data[3]}"
+    puts " #{game_display_data[1]} |" +  " #{game_display_data[2]} |" +  " #{game_display_data[3]}"
     puts separator = "-----------"
-    puts "#{game_display_data[4]} |" +  " #{game_display_data[5]} |" +  " #{game_display_data[6]}"
+    puts " #{game_display_data[4]} |" +  " #{game_display_data[5]} |" +  " #{game_display_data[6]}"
     puts separator
-    puts "#{game_display_data[7]} |" +  " #{game_display_data[8]} |" +  " #{game_display_data[9]}"
+    puts " #{game_display_data[7]} |" +  " #{game_display_data[8]} |" +  " #{game_display_data[9]}"
+end
+
+def bot_place(id, game_position, game_moves)
+    game_position[id] = "O"
+
+    game_moves = game_moves + 1
+
+    id = ask_player_for_input(game_position)
+    if id.nil?
+        ask_player_restart()
+    end
+    player_place(id, game_position, "X", game_moves)
+end
+
+def player_place(id, game_position, move_char, game_moves)
+    game_position[id] = move_char
+
+    bot_move(game_moves, game_position)
+end
+
+def bot_move(game_moves, game_position)
+    decision = bot_make_decision(game_moves, game_position)
+   
+    bot_place(decision, game_position, game_moves)
 end
 
 def ask_player_for_input(game_display_data)
