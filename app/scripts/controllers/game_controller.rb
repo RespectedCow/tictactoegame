@@ -41,6 +41,11 @@ end
 
 def bot_move(game_moves, game_position)
     decision = bot_make_decision(game_moves, game_position)
+
+    if decision.nil?
+        puts "You got a tie! Ending!"
+        exit
+    end
    
     bot_place(decision, game_position, game_moves)
 end
