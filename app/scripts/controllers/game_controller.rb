@@ -15,6 +15,12 @@ def bot_place(id, game_position, game_moves)
 
     game_moves = game_moves + 1
 
+    if winning_position(game_position, "O")
+        display_game_status(game_position)
+        puts "The computer won you loser!"
+        exit
+    end
+
     id = ask_player_for_input(game_position)
     if id.nil?
         ask_player_restart()
@@ -24,6 +30,11 @@ end
 
 def player_place(id, game_position, move_char, game_moves)
     game_position[id] = move_char
+
+    if winning_position(game_position, "X")
+        puts "You won! Congrats!"
+        exit
+    end
 
     bot_move(game_moves, game_position)
 end
