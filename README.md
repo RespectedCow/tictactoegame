@@ -7,13 +7,6 @@ A game stimulating tictactoe
 
 # How to play
 run "ruby launcher.rb" in your terminal after installing.
-a represents the first row and the next character needs to be a number to represent the column(a must be lowercase)
-
-Example: a1 = 
-X |  |
---------
-  |  |
---------
-  |  |
-  
-  b represents the second row and c represents the third. Goodluck as the bot is extremely hard to beat.
+a represents the first row and the next character needs to be a number to represent the column(all must be lowercase)
+b represents the second row.
+c represents the third. Goodluck as the bot is extremely hard to beat.
