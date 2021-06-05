@@ -24,9 +24,7 @@ end
 
 def game_start
     # create the values
-    game_position = Array[" ", " ", " ",
-                              " ", " ", " ",
-                              " ", " ", " "]
+    game_position = Array[" ", " ", " ", " ", " ", " "," ", " ", " "]
 
     game_turn = "BOT"
 

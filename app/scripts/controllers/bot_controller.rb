@@ -29,6 +29,7 @@ def winning_position(game_position, move_char)
     elsif game_position[1] == move_char && game_position[5] == move_char && game_position[9] == move_char
         return true
     elsif game_position[3] == move_char && game_position[5] == move_char && game_position[7] == move_char
+        return true
     end
 end  
 
@@ -85,7 +86,7 @@ def bot_make_decision(game_moves, game_position)
           game_position_copy[moves] = marker
           if winning_position(game_position_copy, marker)
             make_move = moves
-            make_move = moves
+            puts make_move
             return make_move
           end
         end
