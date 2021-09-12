@@ -9,4 +9,4 @@ A game stimulating tictactoe
 run "ruby launcher.rb" in your terminal after installing.
 A represents the first row and the next character needs to be a number to represent the column(all must be lowercase)
 B represents the second row.
-C represents the third. Example: a1. Goodluck as the bot is extremely hard to beat.
+C represents the third. Example: a1. Goodluck as the bot is pretty hard to beat.
